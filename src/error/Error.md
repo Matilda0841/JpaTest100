@@ -81,4 +81,27 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 <br>
 <br>
 
-Spring MVC의 DispatcherServlet에서 "Circular view path" 오류가 발생하였다. 
+Spring MVC의 DispatcherServlet에서 "Circular view path" 오류가 발생하였다.
+
+몰라서 나중에 좀더 자세히 찾아보고 물어보니까
+
+컨트롤러만 붙이는 것은 서비스레이어 사용하는 주체한테 붙기 때문에 현재와 같이 뷰네임으로 페이지 이동하는 경우가 아니라면 (스트링이나 제이슨 데이터같이) 현재처럼 쓰는게 맞다고 한다.
+
+
+
+
+##  **@Controller 와 @RestController 의 차이**
+
+
++ @Controller와 @RestController의 차이점은 용도의 차이라고 말할 수 있다고 생각합니다.
+
+
++ @Controller 어노테이션은 공식적으로 Spring 2.5 버전에서 추가되었고, @RestController는 Spring 4.0 버전에서 추가되었습니다.
+
+
++ 과거에는 JSP, HTML과 같은 View를 전달해 주었기에 주로 @Controller를 사용했고, 최근에는 Frontend / Backend을 나누어 개발하는 경우가 많기에 Backend에서 Rest Api를
+  통해 JSON으로 데이터만 전달하기 때문에 편리성을 위해 @RestController를 사용한다고 합니다.
+
+![에러 해결!](error%202-3.png)
+![에러 해결!](error%202%20해결.png)
+
